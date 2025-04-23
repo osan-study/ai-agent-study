@@ -76,6 +76,8 @@ AI 스터디 \- 랭체인 & 랭그래프로 AI 에이전트 개발하기
 두번쨰 발표: ch5 AI agent 정리
 \-\> 신재익 발표
 
+## 2025.05.02 휴식 
+
 ## 2025.05.09
 
 첫번째 발표: ch6 각각 하나씩 돌아가면서 발표
@@ -86,12 +88,10 @@ AI 스터디 \- 랭체인 & 랭그래프로 AI 에이전트 개발하기
 	6.4 크루AI  
 	6.5 라마인덱스  
 	6.6 AutoGPT
-	새로운 무언가? low code? flowise AI, n8n 등
+	새로운 무언가? low code? flowise AI, n8n, semantic kernel 등
 
-두번쨰 발표: 구글 NEXT 2025
+두번쨰 발표: 구글 NEXT 2025 , google ai studio, flowise AI?
 \-\> 추숙 발표
-
-## 2025.05.02 휴식 
 
 ## 2025.05.16 
 

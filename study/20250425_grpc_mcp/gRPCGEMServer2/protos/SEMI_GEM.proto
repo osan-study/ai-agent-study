@@ -1,0 +1,410 @@
+syntax = "proto3";
+
+package SEMI_GEM;
+
+import "google/protobuf/descriptor.proto";
+import "google/protobuf/empty.proto";
+
+import "protos/semi_e179-1224.proto";
+
+service SEMI_GEM_Service{
+	// Stream 1
+	// HOST ↔ EQ
+	rpc AreYouThrearRequest(S1F1) returns (S1F2) {}
+	// HOST → EQ
+	rpc SelectedEquipmentStatusRequest(S1F3) returns (S1F4) {}
+	// HOST → EQ
+	rpc StatusVariableNamelistRequest(S1F11) returns (S1F12) {}
+	// HOST ↔ EQ
+	rpc EstablishCommunicationsRequest(S1F13) returns (S1F14) {}
+	// HOST → EQ
+	rpc RequestOffline(S1F15) returns (S1F16){}
+	// HOST → EQ
+	rpc RequestOnline(S1F17) returns (S1F18) {}
+	
+	// Stream 2
+	// HOST → EQ
+	rpc EquipmentConstantRequest (S2F13) returns (S2F14) {}
+	// HOST → EQ
+	rpc NewEquipmentConstantSend (S2F15) returns (S2F16) {}
+	// HOST ↔ EQ
+	rpc DateandTimeRequest (S2F17) returns (S2F18) {}
+	// HOST → EQ
+	rpc TraceInitializeSend (S2F23) returns (S2F24) {}
+	// HOST → EQ
+	rpc LoopbackDiagnosticRequest (S2F25) returns (S2F26) {}
+	// HOST → EQ
+	rpc EquipmentConstantnamelistRequest (S2F29) returns (S2F30) {}
+	// HOST → EQ
+	rpc DateandTimeSend (S2F31) returns (S2F32) {}
+	// HOST → EQ
+	rpc DefineReport (S2F33) returns (S2F34) {}
+	// HOST → EQ
+	rpc LinkEventReport (S2F35) returns (S2F36) {}
+	// HOST → EQ
+	rpc EnableDisableEventReport (S2F37) returns (S2F38) {}
+	// HOST → EQ
+	rpc HostCommandSend (S2F41) returns (S2F42) {}
+	
+	// Stream 5
+	// HOST ← EQ
+	rpc AlarmReportSend (S5F1) returns (S5F2) {}
+	// HOST → EQ
+	rpc EnableDisableAlarmSend (S5F3) returns (S5F4) {}
+	// HOST → EQ
+	rpc ListAlarmRequest (S5F5) returns (S5F6) {}
+	
+	// Stream 6
+	// HOST ← EQ
+	rpc TraceDataSend (S6F1) returns (S6F2) {}
+	// HOST ← EQ
+	rpc MultiblockDataSendInquire (S6F5) returns (S6F6) {}
+	// HOST ← EQ
+	rpc EventReportSend (S6F11) returns (S6F12) {}
+	// HOST → EQ
+	rpc EventReportRequest (S6F15) returns (S6F16) {}
+	// HOST → EQ
+	rpc IndividualReportRequest (S6F19) returns (S6F20) {}
+
+	// Stream 7
+	// HOST → EQ
+	rpc CurrentEPPDRequest (S7F19) returns (S7F20) {}
+	// HOST → EQ
+	rpc FormattedProcessProgramSend (S7F23) returns (S7F24) {}
+	// HOST → EQ
+	rpc FormattedProcessProgramRequest (S7F25) returns (S7F26) {}
+	
+	// Stream 9
+	// HOST ↔ EQ
+	rpc UnrecognizedDeviceID (S9F1) returns (Empty) {}
+	// HOST ↔ EQ
+	rpc UnrecognizedStreamType (S9F3) returns (Empty) {}
+	// HOST ↔ EQ
+	rpc UnrecognizedFunctionType (S9F5) returns (Empty) {}
+	// HOST ↔ EQ
+	rpc IllegalData (S9F7) returns (Empty) {}
+	// HOST ↔ EQ
+	rpc TransactionTimerTimeout (S9F9) returns (Empty) {}
+	
+	// Stream 10
+	// HOST ← EQ
+	rpc TerminalRequest (S10F1) returns (S10F2) {}
+	// HOST → EQ
+	rpc TerminalDisplaySingle (S10F3) returns (S10F4) {}
+	// HOST → EQ
+	rpc TerminalDisplayMultiBlock (S10F5) returns (S10F6) {}
+}
+
+message Empty{
+}
+
+message S1F1{
+}
+
+message OnlineData{
+	string MDLN = 1;
+	string SOFTREV = 2;
+}
+
+message S1F2{
+	OnlineData OnlineData = 1;
+}
+
+message S1F3 {
+	repeated int32 svid_list = 1;
+}
+
+message S1F4{
+	repeated string sv_list = 1;
+}
+
+// StatusVariableNamelistRequest
+message S1F11 {
+	repeated int32 svid_list = 1;
+}
+
+message SVINFO {
+	int32 svid = 1;
+	string name = 2;
+	string unit = 3;
+}
+message S1F12{
+	repeated SVINFO sv_info_list = 1;
+}
+
+// Establish Communications Request (CR)
+message S1F13 {
+	OnlineData onlineData = 1;
+}
+message S1F14{
+	int32 commack = 1;
+	OnlineData onlineData = 2;
+}
+// Request Offline
+message S1F15 {
+}
+message S1F16{
+	int32 OFLACK = 1;
+}
+// Request Online
+message S1F17{
+}
+message S1F18{
+	int32 ONLACK = 1;
+}
+// Equipment Constant Request
+message S2F13 {
+	repeated uint32 ECID_LIST = 1;
+}
+message S2F14{
+	repeated string EC_DATA_LIST = 1;
+}
+// New Equipment Constant Send
+message S2F15 {
+	message NEW_EC_INFO{
+		uint32 ECID = 1;
+		string ECV = 2;
+	}
+	repeated NEW_EC_INFO new_ec_info_list = 1;
+}
+message S2F16{
+	int32 EAC = 1;
+}
+// Date and Time Request
+message S2F17 {
+}
+message S2F18{
+	string TIME = 1;
+}
+// Trace Initialize
+message S2F23 {
+	uint32 TRID = 1;
+	string DSPER = 2;
+	uint32 TOTSMP = 3;
+	uint32 REPGSZ = 4;
+	repeated uint32 svid_list = 5;
+}
+message S2F24{
+	int32 TIAACK = 1;
+}
+// Loopback Diagnostic Request
+message S2F25 {
+	int32 ABS = 1;
+}
+message S2F26{
+	int32 ABS = 1;
+}
+// Equipment Constant Namelist Request
+message S2F29 {
+	repeated uint32 ECID_LIST = 1;
+}
+message S2F30{
+	message EC_INFO {
+		uint32 ECID = 1;
+		string ECNAME = 2;
+		string ECV = 3;
+		string ECMIN = 4;
+		string ECMAX = 5;
+		string UNITS = 6;
+	}
+	repeated EC_INFO ec_info_list = 1;
+}
+// Date and Time Set Request
+message S2F31 {
+	string TIME = 1;
+}
+message S2F32{
+	int32 TIACK = 1;
+}
+// Define Report
+message S2F33 {
+	uint32 DATAID = 1;
+	message RPTITEM {
+		uint32 RPTID = 1;
+		repeated uint32 VID_LIST = 2;
+	}
+	repeated RPTITEM rpt_items = 2;
+}
+message S2F34{
+	int32 DRACK = 1;
+}
+// Link Event Report
+message S2F35 {
+	uint32 DATAID = 1;
+	message CEIDITEM {
+		uint32 CEID = 1;
+		repeated uint32 RPTID_LIST = 2;
+	}
+	repeated CEIDITEM ceid_items = 2;
+}
+message S2F36{
+	int32 LRACK = 1;
+}
+// Enable/Disable Event Report
+message S2F37 {
+	bool CEED = 1;
+	repeated uint32 CEID_LIST = 2;
+}
+message S2F38{
+	int32 ERACK = 1;
+}
+// Host Command Send
+message S2F41 {
+	string RCMD = 1;
+	message CPINFO {
+		string CPNAME = 1;
+		string CPVAL = 2;
+	}
+	repeated CPINFO cp_info_list = 2;
+}
+message S2F42{
+	int32 HCACK = 1;
+	message CPACKINFO {
+		string CPNAME = 1;
+		int32 CPACK = 2;
+	}
+	repeated CPACKINFO cp_ack_info_list = 2;
+}
+// Alarm Report Send
+message S5F1 {
+	int32 ALCD = 1;
+	uint32 ALID = 2;
+	string ALTX = 3;
+}
+message S5F2{
+	int32 ACKC5 = 1;
+}
+// Enable/Disable Alarm Send
+message S5F3 {
+	int32 ALED = 1;
+	uint32 ALID = 2;
+}
+message S5F4{
+	int32 ACKC5 = 1;
+}
+// List Alarm Request
+message S5F5 {
+	repeated uint32 ALID_LIST = 1;
+}
+message S5F6{
+	message ALINFO {
+		int32 ALCD = 1;
+		uint32 ALID = 2;
+		string ALTX = 3;
+	}
+	repeated ALINFO al_info_list = 1;
+}
+// Trace Data Send
+message S6F1 {
+	// UNDEFINED STRUCTURE in SML, define based on use case
+}
+message S6F2{
+	int32 ACKC6 = 1;
+}
+// Multiblock Data Send Inquire
+message S6F5 {
+	uint32 DATAID = 1;
+	uint32 DATALENGTH = 2;
+}
+message S6F6{
+	int32 GRANT6 = 1;
+}
+// Event Report Send
+message S6F11 {
+	// UNDEFINED STRUCTURE in SML, define based on use case
+}
+message S6F12{
+	int32 ACKC6 = 1;
+}
+// Event Report Request
+message S6F15 {
+	uint32 CEID = 1;
+}
+message S6F16{
+	// UNDEFINED STRUCTURE in SML, define based on use case
+}
+// Individual Report Request
+message S6F19 {
+	uint32 RPTID = 1;
+}
+message S6F20{
+	repeated string DVVAL_LIST = 1;
+}
+// Current EPPD Request
+message S7F19 {
+}
+message S7F20{
+	repeated string PPID_LIST = 1;
+}
+// Formatted Process Program Send
+message S7F23 {
+	string PPID = 1;
+	string MDLN = 2;
+	string SOFTREV = 3;
+	message PROGRAMITEM {
+		uint32 CCODE = 1;
+		repeated string PPARM_LIST = 2;
+	}
+	repeated PROGRAMITEM program_items = 4;
+}
+message S7F24{
+	int32 ACKC7 = 1;
+}
+// Formatted Process Program Request
+message S7F25 {
+	string PPID = 1;
+}
+message S7F26{
+	string PPID = 1;
+	string MDLN = 2;
+	string SOFTREV = 3;
+	message PROGRAMITEM {
+		uint32 CCODE = 1;
+		repeated string PPARM_LIST = 2;
+	}
+	repeated PROGRAMITEM program_items = 4;
+}
+// Terminal Request
+message S9F1 {
+	// Empty for error reporting
+}
+// Unrecognized Stream Type
+message S9F3 {
+	// Empty for error reporting
+}
+// Unrecognized Function Type
+message S9F5 {
+	// Empty for error reporting
+}
+// Illegal Data
+message S9F7 {
+	// Empty for error reporting
+}
+// Transaction Timer Timeout
+message S9F9 {
+	// Empty for error reporting
+}
+// Terminal Request
+message S10F1 {
+	int32 TID = 1;
+	string TEXT = 2;
+}
+message S10F2{
+	int32 ACKC10 = 1;
+}
+// Terminal Display Single
+message S10F3 {
+	int32 TID = 1;
+	string TEXT = 2;
+}
+message S10F4{
+	int32 ACKC10 = 1;
+}
+// Terminal Display Multi-Block
+message S10F5 {
+	int32 TID = 1;
+	repeated string TEXT_LIST = 2;
+}
+message S10F6{
+	int32 ACKC10 = 1;
+}

@@ -1,0 +1,516 @@
+﻿// NOTICE: SEMI makes no warranties or representations as to the suitability of
+// the standards set forth herein for any particular application. The
+// determination of the suitability of the standard is solely the responsibility
+// of the user. Users are cautioned to refer to manufacturer's instructions,
+// product labels, product data sheets, and other relevant literature,
+// respecting any materials or equipment mentioned herein. These standards
+// are subject to change without notice.
+//
+// By publication of this standard, Semiconductor Equipment and Materials
+// International (SEMI) takes no position respecting the validity of any patent
+// rights or copyrights asserted in connection with any items mentioned in this
+// standard. Users of this standard are expressly advised that determination of
+// any such patent rights or copyrights, and the risk of infringement of such
+// rights are entirely their own responsibility.
+
+// This proto file will define representations of Error, Data Types, Data Value
+// Types and Unit which are considered common components in the Protocol 3 language.
+// This proto file should not define any services.
+
+syntax = "proto3";
+
+package semi;
+
+import "google/protobuf/descriptor.proto";
+import "google/protobuf/timestamp.proto";
+
+// Support custom file options to provide additional information.
+// Note - Must define field numbers explicitly - cannot use constants or enumerated values
+extend google.protobuf.FileOptions {
+  SEMIStandardInformationType semi_standard_information = 1046;   // CustomFieldNumber.SemiStandardInformationFieldNumber
+}
+
+// Information corresponding to the associated SEMI Standard as a custom file option on the .proto file.
+//
+// Note - the proto_buf_file_version will uniquely identify the .proto file version.
+// * For the .proto file associated with the official standard, the proto_buf_file_version will
+//   be the SEMI Standard version (including the publication date in MMYY format)
+//   For example,
+//     proto_buf_file_version="E134.2-XXXX" will indicate this .proto file is for an official SEMI Version (SEMI E134.2-XXXX)
+// * If the .proto file is for an interim release (for example as part of a ballot),
+//   suffix information along the lines of "-Ballot<nnnn>-<Date>" can be added.
+//   For example,
+//     proto_buf_file_version="E134.2-Ballot1234-20180522" will indicate this .proto file is an interim version for
+//     SEMI E134.2-XXXX Ballot 1234 and was released on May 22, 2018
+option (semi_standard_information) =
+{
+  semi_standard : "SEMI E179",
+  proto_buf_file_version : "E179-1224"
+};
+
+// ***************************************************************
+// Version information
+// ***************************************************************
+
+// Protobuf3 doesn't support the concept of constants
+// We want a way for the implementor to get the .proto file version and other information
+// related to the standard if they want to log or check this information.
+// We workaround the issue by exposing a message structure with the version information
+// as a custom file attribute
+// This setting is defined once in all .proto files used by SEMI Standards
+
+message SEMIStandardInformationType
+{
+  string semi_standard = 1;
+  string proto_buf_file_version = 2;
+}
+
+// Use CustomFieldNumber enumerated type so you can use human-readable values
+// on the code side.
+enum CustomFieldNumber
+{
+      // Value when unspecified enum value is received - per Protocol Buffers best practice
+      CUSTOM_FIELD_NUMBER_UNSPECIFIED = 0;      
+
+  // Field Number 1046 has been assigned in the Protobuf Global Extension Registry
+  // for SEMI Standards – I&C Technical Committee
+  // (https://github.com/protocolbuffers/protobuf/blob/master/docs/options.md)
+  // This is a global registry of known extensions for descriptor.proto, so that any developer
+  // who wishes to use multiple 3rd party projects, each with their own extensions, can be confident
+  // that there won't be collisions in extension numbers.
+
+  // NOTE: The term 'master' is from the original source and cannot be
+  // removed for the link to work properly.  SEMI is working to eliminate
+  // these biased terms from its own Standard Documents.
+  SEMI_STANDARD_INFORMATION_FIELD_NUMBER = 1046;
+}
+
+// ***************************************************************
+// Enumerated Type Definitions
+// ***************************************************************
+
+// Best Practice is to specify Unknown element as index 0 for future proofing
+// Enum elements need to be unique across the namespace, so make sure Unknown element name
+// is meaningful to the enum.
+
+// Defines the simple data type definitions
+enum SimpleTypeSpecifier
+{
+  SIMPLE_TYPE_SPECIFIER_UNSPECIFIED = 0;    // Value when unspecified enum value is received - per Protocol Buffers best practice
+  F8 = 1;               // This simple type specifies a double type
+  F4 = 2;               // This simple type specifies a float type
+  I8 = 3;               // This simple type specifies a long type
+  I4 = 4;               // This simple type specifies a int type
+  I2 = 5;               // This simple type specifies a short type
+  I1 = 6;               // This simple type specifies a byte type
+  U8 = 7;               // This simple type specifies a unsignedLong type
+  U4 = 8;               // This simple type specifies a unsignedInt type
+  U2 = 9;               // This simple type specifies a unsignedShort type
+  U1 = 10;              // This simple type specifies a unsignedByte type
+  STRING = 11;          // This simple type specifies a string type
+  DATE_TIME = 12;       // This simple type specifies a dateTime type
+  BOOLEAN = 13;         // This simple type specifies a boolean type
+  BINARY64 = 14;        // This simple type specifies a base64Binary type
+  NO_VALUE = 15;        // This simple type specifies a NoValue type
+  URI = 16;             // This simple type specifies a anyURI type
+  ARRAY = 17;           // The corresponding type is an array
+  STRUCTURE = 18;       // The corresponding type is a structure
+
+  reserved 19 to 999;   // Reserved for future use
+}
+
+// Valid Operator Type Definitions
+
+enum OperatorType   
+{
+  OPERATOR_TYPE_UNSPECIFIED = 0;    // Value when unspecified enum value is received - per Protocol Buffers best practice
+  EQUAL = 1;                        
+  NOT_EQUAL = 2;                    
+  GREATER_THAN = 3;                 
+  LESS_THAN = 4;                    
+  GREATER_THAN_EQUAL_TO = 5;        
+  LESS_THAN_EQUAL_TO = 6;           
+
+  reserved 7 to 999;                // Reserved for future use
+}
+
+// Valid reasons why a value wasn't specified
+// Major sources of an error in providing a value
+enum NoValueReasonType    
+{
+  NO_VALUE_REASON_TYPE_UNSPECIFIED = 0;   // Value when unspecified enum value is received - per Protocol Buffers best practice
+  VALUE_NOT_AVAILABLE = 1;                
+  NO_SUCH_SOURCE = 2;                     
+  NO_SUCH_PARAMETER = 3;                  
+
+  reserved 4 to 999;                      // Reserved for future use
+}
+
+// ***************************************************************
+// Message Type Definitions
+// ***************************************************************
+
+// Represents any possible parameter value type
+message ParameterValueType
+{
+  // The ItemType value represents the data type for the parameter
+  // * If an array option is specified, this should be set to Array
+  // * If an enumerated option is specified, this should specify the data type of the enumerated type
+  // * If a StructuredValueType is specified, this should be set to Structure
+  // * If a NoValueType specified, this should be set to NoValue
+  SimpleTypeSpecifier item_type = 1;
+
+  oneof value
+  {
+    
+    // Suitable for F4 items
+    float float_item = 2;                           
+    // Suitable for F8 Item
+    double double_item = 3;                         
+    // Suitable for I4, I2 and I1 elements - suitable for wide ranging positive and negative values
+    // Protobuf doesn't have small integer values data types.
+    // Use sint32_item rather than creating individual fields to hold I4, I2 and I1 elements
+    sint32 sint32_item = 4;                         
+
+    // Suitable for I8 items - suitable for wide ranging positive and negative values
+    sint64 sint64_item = 5;                         
+    // Suitable for U4, U2 and U1 elements - suitable for wide ranging positive values
+    // Protobuf doesn't have small unsigned integer values data types.
+    // Use uint32_item rather than creating individual fields to hold U4, U2 and U1 elements
+    uint32 uint32_item = 6;
+    // Suitable for U8 items - suitable for wide ranging positive values
+    uint64 uint64_item = 7;
+    // Use the string_item for String and URI elements
+    string string_item = 8;                         
+                                                    
+    google.protobuf.Timestamp date_time_item = 9;   
+    bool boolean_item = 10;                         
+    // Suitable for Binary64 items
+    bytes bytes_item = 11;                          
+    // Parameter value is an array data type
+    ArrayParameterValue array_value = 12;
+    // Parameter value is an enumerated data type
+    EnumeratedParameterValue enumerated_value = 13;
+    // Parameter value is an array of different data types
+    StructuredParameterValue structured_value = 14;
+    // Use this value if there is no value associated with the parameter value
+    NoValueType no_value_item = 15;
+
+    // Suitable for holding mostly large positive values
+    // Data value container is always 4 bytes.  More efficient if values are greater than 2^28
+    fixed32 fixed32_item = 16;
+    // Suitable for holding mostly large positive values
+    // Data value container is always 8 bytes.  More efficient if values are greater than 2^56
+    fixed64 fixed64_item = 17;
+    // Suitable for holding mostly large positive and negative values
+    // Data value container is always 4 bytes.  More efficient if values are greater than 2^28 and negative
+    sfixed32 sfixed32_item = 18;
+    // Suitable for holding mostly large positive and negative values
+    // Data value container is always 8 bytes.  More efficient if values are greater than 2^56 and negative
+    sfixed64 sfixed64_item = 19;
+  }
+}
+
+// INTERNAL -
+
+// Note -
+// Array of 1 PVSet element that is defined as  3 elements (F8, String, Boolean) can be defined as
+// Array of Structure, with one element, where the Structure has 3 ParameterValueType items (F8, String, Boolean)
+
+// Represents a parameter value that is an array of the same primitive data type (array of string, array of float, etc)
+message ArrayParameterValue
+{
+  // The ItemType value represents the data type for all the elements in the array
+  // * If ArrayParameterValueItem is specified (i.e. array of array elements), this should be set to Array specify the data type of all the array options
+  // * If an enumerated option is specified, this should specify the data type of the enumerated type
+  // * If a StructuredValueType is specified, this should be set to Structure
+  // * If a NoValueType specified, this should be set to NoValue
+  SimpleTypeSpecifier item_type = 1;
+
+  oneof value
+  {
+    // Array of Float (suitable for elements that are F4 data types)
+    ArrayFloat array_float_item = 2;
+    // Array of Double (suitable for elements that are F8 data types)
+    ArrayDouble array_double_item = 3;
+    // Array of Sint32 (suitable for elements that are I4, I2, I1 data types)
+    ArraySint32 array_sint32_item = 4;
+    // Array of Sint64 (suitable for elements that are I8 data types)
+    ArraySint64 array_sint64_item = 5;
+    // Array of Uint32 (suitable for elements that are U4, U2, U1 data types)
+    ArrayUint32 array_uint32_item = 6;
+    // Array of Uint64 (suitable for elements that are U8 data types)
+    ArrayUint64 array_uint64_item = 7;
+    // Array of String data types (suitable for elements that are string and URI data types)
+    ArrayString array_string_item = 8;
+    // Array of Timestamp data types
+    ArrayTimestamp array_timestamp_item = 9;
+    // Array of Bool data types
+    ArrayBool array_bool_item = 10;
+    // Array of bytes data type (suitable for elements that are Binary64)
+    ArrayBytes array_bytes_item = 11;
+    // Array of structure data type
+    ArrayStructure array_structure_item = 12;
+    // Array of NoValue data type
+    ArrayNoValue array_no_value_item = 13;
+    // Note - keep field numbers under 15 for frequently occurring message elements (Protocol Buffers Best Practice)
+    // For some reason, compiler won't accept reserving these numbers
+    // reserved 14 to 15;   // Reserved for future use
+    // Data value container is always 4 bytes.  More efficient if values are greater than 2^28
+    ArrayFixed32 array_fixed32_item = 16;
+    // Data value container is always 8 bytes.  More efficient if values are greater than 2^56
+    ArrayFixed64  array_fixed64_item = 17;
+    // Data value container is always 4 bytes.  More efficient if values are greater than 2^28 and negative
+    ArraySfixed32 array_s_fixed32_item = 18;
+    // Data value container is always 8 bytes.  More efficient if values are greater than 2^56 and negative
+    ArraySfixed64 array_s_fixed64_item = 19;
+    // Array of Array elements
+    ArrayOfArrayParameterValue array_parameter_value_item = 20;   
+  }
+}
+
+// Represents a parameter value that is an array of array (of the same data type)
+
+message ArrayOfArrayParameterValue
+{
+  // No need to specify the data type for the parameter in this message since it has to be an array.
+
+  repeated ArrayParameterValue array_elements = 1;    // Enforce minimum one element in the application code
+}
+
+// Represents a parameter value that is an enumerated value
+// Note - this is a different structure than EnumerationType, which is a collection of integer or string values.
+message EnumeratedParameterValue
+{
+  oneof value
+  {
+    // This integer value should match an Enumerated Integer value defined on the Tool
+    sint32 enumerated_integer_item = 1;   
+    // This string value should match an Enumerated String value defined on the Tool
+    string enumerated_string_item = 2;    
+  }
+}
+
+// Represents a parameter value that is a Structured value (array of elements, each could be potentially a different type)
+//
+// Note - For performance reasons, if all the elements in the array are the same data type, it
+// is better to use ArrayParameterValue message
+message StructuredParameterValue
+{
+  
+  repeated ParameterValueType value_items = 1;    // Enforce minimum one element in the application code
+                                                  
+}
+
+// This communicates problems obtaining the requested value
+message NoValueType   
+{
+  NoValueReasonType reason_code = 1;    
+  string description = 2;               
+}
+
+// This communicates enumerated information via an integer value
+message EnumeratedIntegerType   
+{
+  string description = 1;       
+  sint32 value = 2;             
+}
+
+// Array of Enumerated Integer Types
+message EnumeratedIntegersType
+{
+  repeated EnumeratedIntegerType enumerated_integers = 1;   
+}
+
+// This communicates enumerated information via a string value
+message EnumeratedStringType    
+{
+  string description = 1;       
+  string value = 2;             
+}
+
+// Array of Enumerated String Types
+message EnumeratedStringsType
+{
+  repeated EnumeratedStringType enumerated_strings = 1;   
+}
+
+// Array of dedicated double datatype elements
+message ArrayDouble
+{
+  repeated double array_elements = 1;
+}
+
+// Array of dedicated float datatype elements
+message ArrayFloat
+{
+  repeated float array_elements = 1;
+}
+
+// Array of dedicated uint32 datatype elements
+message ArrayUint32
+{
+  repeated uint32 array_elements = 1;
+}
+
+// Array of dedicated uint64 datatype elements
+message ArrayUint64
+{
+  repeated uint64 array_elements = 1;
+}
+
+// Array of dedicated sint32 datatype elements
+message ArraySint32
+{
+  repeated sint32 array_elements = 1;
+}
+
+// Array of dedicated sint64 datatype elements
+message ArraySint64
+{
+  repeated sint64 array_elements = 1;
+}
+
+// Array of dedicated bool datatype elements
+message ArrayBool
+{
+  repeated bool array_elements = 1;
+}
+
+// Array of dedicated string datatype elements
+message ArrayString
+{
+  repeated string array_elements = 1;
+}
+
+// Array of dedicated bytes datatype elements
+message ArrayBytes
+{
+  repeated bytes array_elements = 1;
+}
+
+// Array of dedicated Timestamp datatype elements
+message ArrayTimestamp
+{
+  repeated google.protobuf.Timestamp array_elements = 1;
+}
+
+// Array of dedicated Structure Parameter data type elements
+message ArrayStructure
+{
+  repeated StructuredParameterValue array_elements = 1;
+}
+
+// Array of dedicated NoValue Parameter data type elements
+message ArrayNoValue
+{
+  repeated NoValueType array_elements = 1;
+}
+
+// Array of dedicated fixed32 datatype elements
+message ArrayFixed32
+{
+  repeated fixed32 array_elements = 1;
+}
+
+// Array of dedicated fixed64 datatype elements
+message ArrayFixed64
+{
+  repeated fixed64 array_elements = 1;
+}
+
+// Array of dedicated sfixed32 datatype elements
+message ArraySfixed32
+{
+  repeated sfixed32 array_elements = 1;
+}
+
+// Array of dedicated sfixed64 datatype elements
+message ArraySfixed64
+{
+  repeated sfixed64 array_elements = 1;
+}
+
+message ErrorType   
+{
+  string source = 1;        
+  sint32 code = 2;          
+  string description = 3;   
+
+  string extension = 4;
+}
+
+message VariableType    
+{
+  repeated string type_hints = 1;   
+}
+
+message ArrayType   
+{
+  string type_definition_ref = 1;   // Array's TypeDefinition name  
+
+}
+
+message FieldType   
+{
+  string name = 1;                  
+  string description = 2;           
+  bool can_be_null = 3;             
+  string type_definition_ref = 4;   // Field's TypeDefinition name  
+  
+  oneof unit_item
+  {
+    UnitType unit = 5;
+  }
+}
+
+message StructureType   
+{
+  repeated FieldType fields = 1;    
+}
+
+// Enumerations are expressed as a collection of one or more enumerated integer or string values.
+// These two types are not allowed to exist together (mixed).
+message EnumerationType   
+{
+  
+  oneof enumeration_value
+  {
+    EnumeratedIntegersType enumerated_integers = 1;   
+    EnumeratedStringsType enumerated_strings = 2;     
+  }
+}
+
+message TypeDefinitionType  
+{
+  string type_name = 1;                     
+  string description = 2;                   
+  oneof type_detail
+  {
+    SimpleTypeSpecifier simple_type = 3;    
+    ArrayType array = 4;                    
+    StructureType structure = 5;            
+    EnumerationType enumeration = 6;        
+    VariableType variable = 7;              
+  }
+}
+
+message ParameterTypesType    
+{
+  repeated TypeDefinitionType type_definitions = 1;   // Software application need to ensure TypeName are unique
+                                                      
+}
+
+message UnitType    
+{
+  string unit_id = 1;       
+  string symbol = 2;        
+  string description = 3;   
+}
+
+message UnitSetType   
+{
+  repeated UnitType units = 1;    
+}
+
+

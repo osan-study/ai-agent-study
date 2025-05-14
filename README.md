@@ -28,6 +28,7 @@ AI 스터디 \- 랭체인 & 랭그래프로 AI 에이전트 개발하기
 
 # 스터디 참가자
 
+신재익, 나명진, 채민석, 이정희, 최윤진, 김, 추숙
 
 ---
 
@@ -94,7 +95,6 @@ gRPC 와 Clude MCP 연동 (나명진)
 	7. 오토젠
 	8. n8n: 김
 	9. flowise AI: 추숙
-	새로운 무언가? low code? flowise AI, n8n, semantic kernel 등
 
 두번쨰 발표: 구글 NEXT 2025 후기 
 \-\> 발표자: 추숙

@@ -1,0 +1,21 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	question(question)
+	counter(counter)
+	reject_print_node(reject_print_node)
+	resolve_print_node(resolve_print_node)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> question;
+	counter -. &nbsp;reject&nbsp; .-> reject_print_node;
+	counter -. &nbsp;resolve&nbsp; .-> resolve_print_node;
+	question --> counter;
+	reject_print_node --> __end__;
+	resolve_print_node --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

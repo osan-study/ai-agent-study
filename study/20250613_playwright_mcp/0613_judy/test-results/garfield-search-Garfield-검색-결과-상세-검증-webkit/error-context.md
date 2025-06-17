@@ -1,0 +1,150 @@
+# Page snapshot
+
+```yaml
+- text: This is a demo intended for testing. Data and images are provided by
+- link "TMDB":
+  - /url: https://www.themoviedb.org
+- text: .
+- banner:
+  - menu
+  - search:
+    - button "Search for a movie":
+      - img
+    - textbox "Search Input"
+  - button "☀"
+  - checkbox "Toggle Switch"
+  - text: Toggle Switch
+  - button "☾"
+  - button "Log In":
+    - img
+- main:
+  - heading "Popular" [level=1]
+  - heading "movies" [level=2]
+  - list "movies":
+    - listitem "movie":
+      - link "poster of Deadpool & Wolverine Deadpool & Wolverine rating":
+        - /url: /playwright-movies-app/movie?id=533535&page=1
+        - img "poster of Deadpool & Wolverine"
+        - heading "Deadpool & Wolverine" [level=2]
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Inside Out 2 Inside Out 2 rating":
+        - /url: /playwright-movies-app/movie?id=1022789&page=1
+        - img "poster of Inside Out 2"
+        - heading "Inside Out 2" [level=2]
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Despicable Me 4 Despicable Me 4 rating":
+        - /url: /playwright-movies-app/movie?id=519182&page=1
+        - img "poster of Despicable Me 4"
+        - heading "Despicable Me 4" [level=2]
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - 'link "poster of Bad Boys: Ride or Die Bad Boys: Ride or Die rating"':
+        - /url: /playwright-movies-app/movie?id=573435&page=1
+        - 'img "poster of Bad Boys: Ride or Die"'
+        - 'heading "Bad Boys: Ride or Die" [level=2]'
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Twisters Twisters rating":
+        - /url: /playwright-movies-app/movie?id=718821&page=1
+        - img "poster of Twisters"
+        - heading "Twisters" [level=2]
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Longlegs Longlegs rating":
+        - /url: /playwright-movies-app/movie?id=1226578&page=1
+        - img "poster of Longlegs"
+        - heading "Longlegs" [level=2]
+        - text: ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Gunner Gunner rating":
+        - /url: /playwright-movies-app/movie?id=5492&page=1
+        - img "poster of Gunner"
+        - heading "Gunner" [level=2]
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of The Union The Union rating":
+        - /url: /playwright-movies-app/movie?id=704239&page=1
+        - img "poster of The Union"
+        - heading "The Union" [level=2]
+        - text: ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of It Ends with Us It Ends with Us rating":
+        - /url: /playwright-movies-app/movie?id=1079091&page=1
+        - img "poster of It Ends with Us"
+        - heading "It Ends with Us" [level=2]
+        - text: ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Kill Kill rating":
+        - /url: /playwright-movies-app/movie?id=1160018&page=1
+        - img "poster of Kill"
+        - heading "Kill" [level=2]
+        - text: ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Jackpot! Jackpot! rating":
+        - /url: /playwright-movies-app/movie?id=1094138&page=1
+        - img "poster of Jackpot!"
+        - heading "Jackpot!" [level=2]
+        - text: ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Darkness of Man Darkness of Man rating":
+        - /url: /playwright-movies-app/movie?id=1049574&page=1
+        - img "poster of Darkness of Man"
+        - heading "Darkness of Man" [level=2]
+        - text: ★ ★ ★ ★ ★
+    - listitem "movie":
+      - 'link "poster of Alien: Romulus Alien: Romulus rating"':
+        - /url: /playwright-movies-app/movie?id=945961&page=1
+        - 'img "poster of Alien: Romulus"'
+        - 'heading "Alien: Romulus" [level=2]'
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - 'link "poster of A Quiet Place: Day One A Quiet Place: Day One rating"':
+        - /url: /playwright-movies-app/movie?id=762441&page=1
+        - 'img "poster of A Quiet Place: Day One"'
+        - 'heading "A Quiet Place: Day One" [level=2]'
+        - text: ★ ★ ★ ★ ★
+    - listitem "movie":
+      - 'link "poster of Saving Bikini Bottom: The Sandy Cheeks Movie Saving Bikini Bottom: The Sandy Cheeks Movie rating"':
+        - /url: /playwright-movies-app/movie?id=831815&page=1
+        - 'img "poster of Saving Bikini Bottom: The Sandy Cheeks Movie"'
+        - 'heading "Saving Bikini Bottom: The Sandy Cheeks Movie" [level=2]'
+        - text: ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Prey Prey rating":
+        - /url: /playwright-movies-app/movie?id=1129598&page=1
+        - img "poster of Prey"
+        - heading "Prey" [level=2]
+        - text: ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of The Garfield Movie The Garfield Movie rating":
+        - /url: /playwright-movies-app/movie?id=748783&page=1
+        - img "poster of The Garfield Movie"
+        - heading "The Garfield Movie" [level=2]
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Crescent City Crescent City rating":
+        - /url: /playwright-movies-app/movie?id=1245708&page=1
+        - img "poster of Crescent City"
+        - heading "Crescent City" [level=2]
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Dragonkeeper Dragonkeeper rating":
+        - /url: /playwright-movies-app/movie?id=588648&page=1
+        - img "poster of Dragonkeeper"
+        - heading "Dragonkeeper" [level=2]
+        - text: ★ ★ ★ ★ ★ ★
+    - listitem "movie":
+      - link "poster of Monolith Monolith rating":
+        - /url: /playwright-movies-app/movie?id=1024721&page=1
+        - img "poster of Monolith"
+        - heading "Monolith" [level=2]
+        - text: ★ ★ ★ ★ ★ ★
+  - link "Page 2":
+    - /url: /playwright-movies-app?category=Popular&page=2
+    - button "Page 2":
+      - text: Page 2
+      - img
+- alert: Please wait a moment. Movies
+```

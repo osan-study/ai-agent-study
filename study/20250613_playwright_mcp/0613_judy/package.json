@@ -1,0 +1,19 @@
+{
+  "name": "playwright-garfield-test",
+  "version": "1.0.0",
+  "description": "Playwright test for Garfield movie search",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:ui": "playwright test --ui"
+  },
+  "keywords": ["playwright", "testing", "e2e", "garfield"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}

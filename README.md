@@ -103,20 +103,38 @@ ch7 환경설정 : openai, tavily api 설정
 
 ## 2025.06.13
 
-n8n과 rag 활용 사례 : 주디 발표
+tavily, playwright mcp 활용 사례 : 주디 발표
 
-ollama와 local LLM 활용 : 신재익 발표
+## 2025.06.20
+
+local LLM 사용법 : 신재익 발표  
+
+ch6.6 AutoGPT: 이정희 (+ch8.2)  
 
 ## 추후 일정 조절
 
-ch7 환경설정 : ? 발표  
+## 2025.06.27
 
+스터디 주제  
+- 랭체인 랭그래프 api 문서보고 agent 만들어 볼까요?  
+- 랭체인 공식 예제  
+https://github.com/langchain-ai/agents-from-scratch 
+
+## 2025.07.26 
+오산개발자모임 여름 세미나 : 스터디했던 내용 발표  
+- E2E 테스트 자동화하기  
+- TAVIL AI 기술 뉴스 요약 TOP 10 전달  
+- 크립토?  
+
+
+##################
+
+ch7 환경설정 : ? 발표  
 
 발표: ch6 각각 하나씩 돌아가면서 발표, 가능하면 ch8 내용 포함해서 준비  
 
 	ch6.1 오토젠 (+ch8.3)
 	ch6.4 크루AI:  (+ch8.5)
-	ch6.6 AutoGPT: 이정희 (+ch8.2)
 
 첫번째 발표: ch7 환경설정 + ch8 랭체인
 \-\> 발표자는 당일 사다리 타기로 결정

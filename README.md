@@ -206,14 +206,22 @@ https://youtu.be/Uw0ZWXI2Jrw
 ## 생략 : Lang Graph 로 대체 됨 
 
 심화편 CH 11 LangServe  
-
-https://github.com/langchain-ai/langserve 
+https://github.com/langchain-ai/langserve  
 
 ## 이후
 
-LangGraph
+Graph RAG
+https://wikidocs.net/book/18976 
+https://wikidocs.net/book/16760 
+
+LangGraph 
+https://wikidocs.net/233785  테디노트 추가 챕터   
+https://wikidocs.net/book/16723 
+https://docs.langchain.com/oss/python/langgraph/overview 
 
 LangGraph Deep Agent
+https://docs.langchain.com/oss/python/deepagents/overview
+https://github.com/teddynote-lab/deep-agents-from-scratch 테디노트  
 
 
 ---

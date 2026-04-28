@@ -167,7 +167,7 @@ https://youtu.be/Uw0ZWXI2Jrw
 
 심화편 CH 1 리랭크  : 신재익  
 
-## 2026.03.13
+## 2026.03.06
 
 심화편 CH 2 RAG 파이프라인 : 이정희 
 
@@ -187,17 +187,27 @@ https://youtu.be/Uw0ZWXI2Jrw
 
 심화편 CH 6 LangSmith API를 활용한 프롬프트 최적화 : 신재익
 
-## 이후
+## 2026.05.08
 
-심화편 CH 7 도구와 툴킷  
+심화편 CH 7 도구와 툴킷  : 윤일준
 
-심화편 CH 8 에이전트 주요기능    
+## 2026.05.08
 
-심화편 CH 9 에이전트 활용  
+심화편 CH 8 에이전트 주요기능 : 정세일  
 
-심화편 CH 10 Streamlit을 이용한 서비스 배포 실습  
+## 2026.05.08
+
+심화편 CH 9 에이전트 활용 : 이정희  
+
+## 2026.05.08
+
+심화편 CH 10 Streamlit을 이용한 서비스 배포 실습 : 주디  
+
+## 생략 : Lang Graph 로 대체 됨 
 
 심화편 CH 11 LangServe  
+
+https://github.com/langchain-ai/langserve 
 
 ## 이후
 

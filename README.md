@@ -125,7 +125,7 @@ Graph RAG 관련 구현 영상 리뷰.
 
 
 
-# 함꼐 스터디 할 내용. 
+# 함께 스터디 할 내용. 
 
 ## knowledge graph + LLM + wiki. 
 

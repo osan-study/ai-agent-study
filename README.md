@@ -23,12 +23,12 @@ AI 스터디 \- Neo4j-GraphRAG 기반 AI Agent 스터디
 이하 "나연" 로 부름  
 
 참고자료 :  
-[공원나연 - 그래프 데이터베이스 정복하기 영상](https://youtube.com/playlist?list=PLGdAO3WWoeI5RhfAhdgLHQHc6TBn8bBOa&si=ws9FTX9czpasDYSp) 
-[공원나연 - Graph RAG 예제코드](https://github.com/gongwon-nayeon/fastcampus-graphrag) 
+[공원나연 - 그래프 데이터베이스 정복하기 영상](https://youtube.com/playlist?list=PLGdAO3WWoeI5RhfAhdgLHQHc6TBn8bBOa&si=ws9FTX9czpasDYSp)  
+[공원나연 - Graph RAG 예제코드](https://github.com/gongwon-nayeon/fastcampus-graphrag)   
 
-[langchain - graph rag retriver](https://docs.langchain.com/oss/python/integrations/retrievers/graph_rag)
-[Neo4j-GraphRAG Document](https://neo4j.com/docs/neo4j-graphrag-python/current/index.html#)
-[Neo4j-GraphRAG 예제코드](https://github.com/neo4j/neo4j-graphrag-python) 
+[langchain - graph rag retriver](https://docs.langchain.com/oss/python/integrations/retrievers/graph_rag)  
+[Neo4j-GraphRAG Document](https://neo4j.com/docs/neo4j-graphrag-python/current/index.html#)  
+[Neo4j-GraphRAG 예제코드](https://github.com/neo4j/neo4j-graphrag-python)   
 
 ---
 

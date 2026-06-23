@@ -20,7 +20,6 @@ AI 스터디 \- Neo4j-GraphRAG 기반 AI Agent 스터디
 이하 "판다스" 로 부름  
 
 [공원나연 - Neo4j GraphRAG 파이썬 패키지 가이드북](https://wikidocs.net/book/16760)  
-
 이하 "나연" 로 부름  
 
 참고자료 :  
@@ -126,23 +125,26 @@ Graph RAG 관련 구현 영상 리뷰.
 
 
 
-# 이후 스터디 할 내용. 
+# 함꼐 스터디 할 내용. 
 
 ## knowledge graph + LLM + wiki. 
 
 제텔카스텐 메모법. 
-https://news.hada.io/weekly/202614. 
+https://news.hada.io/weekly/202614 
 
 Obisidian   
-https://obsidian.md/. 
+https://obsidian.md/ 
 
 Andrej Karpathy - LLM wiki   
 https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f   
 https://news.hada.io/topic?id=28208   
  
+
+# 이후 스터디 할 내용. 
+
 ## 온톨로지 
 
-[온톨로지 과학자를 위한 지식그래프](https://product.kyobobook.co.kr/detail/S000001743834). 
+[온톨로지 과학자를 위한 지식그래프](https://product.kyobobook.co.kr/detail/S000001743834) 
 
 
 ## lang graph. 

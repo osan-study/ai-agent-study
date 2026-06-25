@@ -61,7 +61,7 @@ AI 스터디 \- Neo4j-GraphRAG 기반 AI Agent 스터디
 판다스 - 파트 3 : 개발 환경 설정   
 나연 - 파트 1  GraphRAG를 위한 Neo4j 시작하기 - Ch 3   
 
-[참고1](https://aisparkup.com/posts/13703?utm_source=aisparkup.beehiiv.com&utm_medium=newsletter&utm_campaign=ai)
+[참고:ai메모리](https://aisparkup.com/posts/13703)
 
 ## 2025.07.10  
   
@@ -69,8 +69,6 @@ AI 스터디 \- Neo4j-GraphRAG 기반 AI Agent 스터디
 
 판다스 - 파트 4 : 벡터 검색  
 나연 - 파트 2  LLM 사용하기 - Ch 1,2   
-
-[참고1](https://aisparkup.com/posts/5573)
 
 ## 2025.07.17  
   
@@ -85,6 +83,8 @@ AI 스터디 \- Neo4j-GraphRAG 기반 AI Agent 스터디
 판다스 - 파트 6 : 지식 그래프 만들기   
 나연 - 파트 2 : LLM 사용하기   
 나연 - 파트 3 : 그래프 구축하기 - Chapter 3. 프롬프트(Prompt) 구성    
+
+[참고:청킹전략](https://aisparkup.com/posts/5573)
 
 ## 2025.07.31  
   
@@ -116,6 +116,9 @@ AI 스터디 \- Neo4j-GraphRAG 기반 AI Agent 스터디
 ## 2025.08.28  
 
 판다스 - 파트 8-4 : 성능 최적화     
+
+[참고: 리랭킹](https://aisparkup.com/posts/3204)
+[참고: RAG전략](https://aisparkup.com/posts/5752)
 
 ## 2025.09.04  
 
@@ -151,7 +154,7 @@ https://news.hada.io/topic?id=28208
 [Pixel RAG](https://github.com/StarTrail-org/PixelRAG)
 [RAG-Anything](https://github.com/HKUDS/RAG-Anything)
 [Ape RAG](https://github.com/apecloud/ApeRAG)
-[]()
+[Vercel PageIndex](https://github.com/VectifyAI/PageIndex)
 []()
 
 # 이후 스터디 할 내용   

@@ -61,12 +61,16 @@ AI 스터디 \- Neo4j-GraphRAG 기반 AI Agent 스터디
 판다스 - 파트 3 : 개발 환경 설정   
 나연 - 파트 1  GraphRAG를 위한 Neo4j 시작하기 - Ch 3   
 
+[참고1](https://aisparkup.com/posts/13703?utm_source=aisparkup.beehiiv.com&utm_medium=newsletter&utm_campaign=ai)
+
 ## 2025.07.10  
   
 ### 벡터 검색  
 
 판다스 - 파트 4 : 벡터 검색  
 나연 - 파트 2  LLM 사용하기 - Ch 1,2   
+
+[참고1](https://aisparkup.com/posts/5573)
 
 ## 2025.07.17  
   
@@ -125,7 +129,7 @@ Graph RAG 관련 구현 영상 리뷰
 
 
 
-# 함께 스터디 할 내용    
+# 스터디에서 함께 살펴볼 내용    
 
 ## knowledge graph + LLM + wiki    
 
@@ -139,6 +143,16 @@ Andrej Karpathy - LLM wiki
 https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f    
 https://news.hada.io/topic?id=28208   
  
+[RAGflow](https://github.com/infiniflow/ragflow)
+[chonkie](https://github.com/chonkie-inc/chonkie)
+[META REFRAG](https://news.hada.io/topic?id=23603)
+[neo4j LLM KG builder](https://github.com/neo4j-labs/llm-graph-builder)
+[Light RAG](https://github.com/hkuds/lightrag)
+[Pixel RAG](https://github.com/StarTrail-org/PixelRAG)
+[RAG-Anything](https://github.com/HKUDS/RAG-Anything)
+[Ape RAG](https://github.com/apecloud/ApeRAG)
+[]()
+[]()
 
 # 이후 스터디 할 내용   
 

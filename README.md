@@ -136,15 +136,11 @@ Graph RAG 관련 구현 영상 리뷰
 
 ## knowledge graph + LLM + wiki    
 
-제텔카스텐 메모법    
-https://news.hada.io/weekly/202614    
+[제텔카스텐 메모법](https://news.hada.io/weekly/202614)    
 
-Obisidian   
-https://obsidian.md/    
+[Obisidian](https://obsidian.md/)    
 
-Andrej Karpathy - LLM wiki      
-https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f    
-https://news.hada.io/topic?id=28208   
+[Andrej Karpathy - LLM wiki](https://news.hada.io/topic?id=28208)   
  
 [RAGflow](https://github.com/infiniflow/ragflow)
 [chonkie](https://github.com/chonkie-inc/chonkie)
@@ -176,4 +172,102 @@ https://docs.langchain.com/oss/python/deepagents/overview
 https://github.com/teddynote-lab/deep-agents-from-scratch 테디노트    
 
 
+# neo4j Graph RAG Academy    
+
+[Graph RAG Academy](https://graphacademy.neo4j.com/knowledge-graph-rag/)   
+
+[Certification](https://graphacademy.neo4j.com/certifications/)  
+
+[neo4j docs](https://neo4j.com/docs/)  
+
+[neo4j cypher manual](https://neo4j.com/docs/cypher-manual/current/introduction/)  
+
+
+## Knowledge graph fundamentals    
+
+### Neo4j Fundamentals
+
+[Neo4j Fundamentals](https://graphacademy.neo4j.com/courses/neo4j-fundamentals/)    
+
+[GraphAcademy - Neo4j Fundamentals - What is Neo4j? ](https://youtu.be/EhwYM5E0S3c?si=0p7Wr9x2jnek_T4j) 
+
+[ GraphAcademy - Neo4j Fundamentals - Thinking in Graphs ](https://youtu.be/1g8hmyFO8xo?si=029nXeFRRHKoExTz)     
+
+[ GraphAcademy - Neo4j Fundamentals - Reading Graphs ](https://youtu.be/KkzcyQ-C2IU?si=U8zW7ScNic5ncBnl)     
+
+[ GraphAcademy - Neo4j Fundamentals - Pattern Matching ](https://youtu.be/WKhDpaUC8Tc?si=3X6VfM6h_VWuFxfe)     
+
+[ GraphAcademy - Neo4j Fundamentals - Creating Graphs ](https://youtu.be/AhMjmxLPEWM?si=OWqs7T8_6SzeCuGl)     
+
+### GenerativeAI Fundamentals
+
+[Neo4j & GenerativeAI Fundamentals](https://graphacademy.neo4j.com/courses/genai-fundamentals/)    
+
+
+
+[Cypher Fundamentals](https://graphacademy.neo4j.com/courses/cypher-fundamentals/)       
+
+[Graph Data Modeling Fundamentals](https://graphacademy.neo4j.com/courses/modeling-fundamentals/)    
+
+[Importing Data Fundamentals](https://graphacademy.neo4j.com/courses/importing-fundamentals/)         
+
+[Importing CSV data into Neo4j](https://graphacademy.neo4j.com/courses/importing-cypher/)     
+     
+## Building knowledge graphs    
+
+### Vectors & Relationships    
+
+[Introduction to Vector Indexes and Unstructured Data](https://graphacademy.neo4j.com/courses/llm-vectors-unstructured/)     
+
+### Domain Graphs    
+
+[Building Knowledge Graphs with LLMs](https://graphacademy.neo4j.com/courses/llm-knowledge-graph-construction/)     
+
+[Constructing Knowledge Graphs with Neo4j GraphRAG for Python](https://graphacademy.neo4j.com/courses/genai-graphrag-python/)         
+
+[Neo4j LLM Knowledge Graph Builder](https://neo4j.com/labs/genai-ecosystem/llm-graph-b
+
+## Chatbot & Agent     
+
+[Using Neo4j with LangChain](https://graphacademy.neo4j.com/courses/genai-integration-langchain/)    
+
+[Build a Neo4j-backed Chatbot using Python](https://graphacademy.neo4j.com/courses/llm-chatbot-python/)    
+
+[Neo4j Agent Memory](https://neo4j.com/labs/agent-memory/)     
+
+[NeoConverse - Graph Database Search with Natural Language](https://neo4j.com/labs/genai-ecosystem/neoconverse/)   
+
+[Developing with Neo4j MCP Tools](https://graphacademy.neo4j.com/courses/genai-mcp-neo4j-tools/)    
+
+[Neo4j CLI](https://github.com/neo4j-labs/neo4j-cli)   
+
+[Neo4j Agent Skills](https://neo4j.com/labs/genai-ecosystem/agent-skills/)   
+
+uilder/)  
+
+
+## Knowledge Enrichment    
+
+[Introduction to Neo4j Graph Data Science](https://graphacademy.neo4j.com/courses/gds-product-introduction/)     
+
+[Neo4j Graph Data Science Fundamentals](https://graphacademy.neo4j.com/courses/graph-data-science-fundamentals/)     
+
+[Intermediate Cypher Queries](https://graphacademy.neo4j.com/courses/importing-fundamentals/)     
+
+[Using Neo4j with Python](https://graphacademy.neo4j.com/courses/drivers-python/)    
+
+[Building Neo4j Applications with Python](https://graphacademy.neo4j.com/courses/app-python/)    
+
+[Neo4j ETL Tool - Interactive Relational Database Data Import](https://neo4j.com/labs/etl-tool/)   
+
+
+
+
+    
+[]()     
+[]()     
+[]()     
+[]()     
+[]()     
+[]()     
 
